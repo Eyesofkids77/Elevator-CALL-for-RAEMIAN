@@ -7,25 +7,24 @@
 <!-- 제목설정 -->
 
     <ImageView
-        android:id="@+id/setting_iconImageView2"
-        android:layout_width="60dp"
-        android:layout_height="55dp"
+        android:id="@+id/setting_iconImageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="right"
         android:src="@drawable/setting_icon"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp"
-    />
+        android:layout_alignParentRight="true"
+        />
 
     <TextView
         android:id="@+id/test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/setting_iconImageView"
         android:text="SETTING"
         android:textColor="#F2F2F2"
         android:textSize="32sp"
-        android:layout_alignTop="@id/setting_iconImageView2"
-        android:layout_toEndOf="@id/setting_iconImageView2"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="-7dp" />
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="-7dp"
         />
 
 
@@ -38,11 +37,12 @@
         android:text="LOCAL SERVER"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
-        android:layout_marginTop="24dp"
         android:layout_below="@id/test"
-        android:gravity="end"
-        android:paddingEnd="220dp"
-        android:layout_alignParentStart="true" />
+        android:gravity="left"
+        android:layout_marginLeft="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        />
 
 
     <EditText
@@ -50,28 +50,28 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:hint=""
-        android:layout_marginTop="24dp"
+        android:text="10.2.1.11"
         android:layout_below="@id/test"
         android:inputType="text"
         android:background="#F2F2F2"
-        android:text="10.2.1.11"
         android:gravity="center"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="50dp"
+        android:layout_marginTop="40dp"
         />
 
     <TextView
         android:id="@+id/localserverDes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOCAL SERVER에 대한 설명 추가 설명 추가 설명 추가설명 추가\n설명 추가 설명 추가 설명 추가 설명 추가  "
+        android:text="LOCAL SERVER IP를 설정합니다. 일반적으로 다음과 같이 확인할 수 있습니다.\n설정 ▷ 지정번호 ▷ 우리집번호 ▷ #*00 저장"
         android:textColor="#BFBFBF"
         android:textSize="9sp"
         android:layout_marginTop="1dp"
         android:layout_below="@id/localserver"
         android:layout_alignParentStart="true"
         android:gravity="start"
-        android:paddingStart="75dp" />
+        android:paddingStart="50dp" />
 
 
 <!-- 도착층 설정 -->
@@ -84,9 +84,9 @@
         android:textColor="#F2F2F2"
         android:textSize="18sp"
         android:layout_below="@id/localserverDes"
-        android:gravity="end"
+        android:gravity="left"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="15dp"
-        android:paddingEnd="220dp"
         />
 
     <EditText
@@ -96,7 +96,7 @@
         android:hint=""
         android:layout_marginTop="15dp"
         android:layout_below="@id/localserverDes"
-        android:inputType="text"
+        android:inputType="number"
         android:background="#F2F2F2"
         android:text="24"
         android:gravity="center"
@@ -105,27 +105,29 @@
         />
 
 
-    <!-- 현 상태 업데이트 주기 설정 -->
+
 
     <TextView
         android:id="@+id/yourfloorDes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOCAL SERVER에 대한 설명 추가 설명 추가 설명 추가설명 추가\n설명 추가 설명 추가 설명 추가 설명 추가  "
+        android:text="도착층을 설정합니다.\n"
         android:textColor="#BFBFBF"
         android:textSize="9sp"
         android:layout_marginTop="1dp"
         android:layout_below="@id/yourfloor"
         android:layout_alignParentStart="true"
         android:gravity="start"
-        android:paddingStart="75dp" />
+        android:paddingStart="50dp" />
+
+    <!-- 현 상태 업데이트 주기 설정 -->
 
     <TextView
         android:id="@+id/updateinterval"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:paddingEnd="220dp"
+        android:gravity="left"
+        android:layout_marginLeft="40dp"
         android:text="UPDATE INTERVAL"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
@@ -140,9 +142,9 @@
         android:hint=""
         android:layout_marginTop="15dp"
         android:layout_below="@id/yourfloorDes"
-        android:inputType="text"
         android:background="#F2F2F2"
         android:text="1000"
+        android:inputType="number"
         android:gravity="center"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="50dp"
@@ -153,14 +155,14 @@
         android:id="@+id/updateintervalDes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOCAL SERVER에 대한 설명 추가 설명 추가 설명 추가설명 추가\n설명 추가 설명 추가 설명 추가 설명 추가  "
+        android:text="엘리베이터의 현재 운행정보를 받아오는 주기를 설정합니다.\n밀리초(ms) 단위이며 1000밀리초 = 1초입니다."
         android:textColor="#BFBFBF"
         android:textSize="9sp"
         android:layout_marginTop="1dp"
         android:layout_below="@id/updateinterval"
         android:layout_alignParentStart="true"
         android:gravity="start"
-        android:paddingStart="75dp" />
+        android:paddingStart="50dp" />
 
 
 
@@ -170,8 +172,8 @@
         android:id="@+id/elevatornumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:paddingEnd="220dp"
+        android:gravity="left"
+        android:layout_marginLeft="40dp"
         android:text="ELEVATOR No."
         android:textColor="#F2F2F2"
         android:textSize="18sp"
@@ -186,7 +188,7 @@
         android:hint=""
         android:layout_marginTop="15dp"
         android:layout_below="@id/updateintervalDes"
-        android:inputType="text"
+        android:inputType="number"
         android:background="#F2F2F2"
         android:text="1"
         android:gravity="center"
@@ -198,14 +200,15 @@
         android:id="@+id/elevatornumberDes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOCAL SERVER에 대한 설명 추가 설명 추가 설명 추가설명 추가\n설명 추가 설명 추가 설명 추가 설명 추가  "
+        android:text="엘리베이터가 몇 호기인지 입력합니다.\n일반적으로 국가승강기정보센터(www.elevator.go.kr)에서 조회할 수 있습니다."
         android:textColor="#BFBFBF"
         android:textSize="9sp"
         android:layout_marginTop="1dp"
         android:layout_below="@id/elevatornumber"
         android:layout_alignParentStart="true"
         android:gravity="start"
-        android:paddingStart="75dp" />
+        android:paddingStart="50dp"
+        android:autoLink="web" />
 
 
     <!-- 도착 시 알림 여부 설정-->
@@ -214,8 +217,8 @@
         android:id="@+id/arrilvalalerts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:paddingEnd="220dp"
+        android:gravity="left"
+        android:layout_marginLeft="40dp"
         android:text="ARRIVAL ALERTS"
         android:textColor="#F2F2F2"
         android:textSize="18sp"
@@ -243,14 +246,14 @@
         android:id="@+id/arrilvalalertsDes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOCAL SERVER에 대한 설명 추가 설명 추가 설명 추가설명 추가\n설명 추가 설명 추가 설명 추가 설명 추가  "
+        android:text="도착 알림 사운드 재생 여부를 설정합니다.\n"
         android:textColor="#BFBFBF"
         android:textSize="9sp"
         android:layout_marginTop="1dp"
         android:layout_below="@id/arrilvalalerts"
         android:layout_alignParentStart="true"
         android:gravity="start"
-        android:paddingStart="75dp" />
+        android:paddingStart="50dp" />
 
     <!-- Log 비활성화 -->
 
@@ -270,19 +273,32 @@
         />
 
     <!-- 제작자 후원하기 -->
+    <ImageView
+        android:id="@+id/donation1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/backButton"
+        android:src="@drawable/donation"
+        android:layout_marginTop="24dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="146dp"
+        />
+
 
     <TextView
-        android:id="@+id/eyesofkids"
-        android:layout_width="match_parent"
+        android:id="@+id/donation2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="제작자 후원하기"
         android:textColor="#FFC000"
         android:textSize="15sp"
         android:layout_below="@id/backButton"
-        android:layout_marginTop="20dp"
-
+        android:layout_marginTop="21dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="140dp"
         />
+
 
 
     <!-- 세이브, 돌아가기 버튼 -->
@@ -292,6 +308,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAVE"
+
         android:layout_marginStart="110dp"
         android:layout_marginTop="40dp"
         android:layout_below="@id/arrilvalalertsDes"
@@ -301,7 +318,7 @@
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BACK"
+        android:text="CANCEL"
         android:layout_marginEnd="110dp"
         android:layout_marginTop="40dp"
         android:layout_below="@id/arrilvalalertsDes"
@@ -309,16 +326,19 @@
 
 
     <!-- 카페 접속 링크 -->
-
-    <!--<ImageView
-        android:id="@+id/setting_iconImageView2"
-        android:layout_width="60dp"
-        android:layout_height="55dp"
-        android:src="@drawable/setting_icon"
+    <TextView
+        android:id="@+id/cafelink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이 어플은 네이버 카페 모두의 스마트홈(cafe.naver.com/stsmarthome),\n홈 어시스턴트 사용자모임(cafe.naver.com/koreassistant) 에서 많은 자료를\n참고하여 제적되었습니다. 카페에 방문하시면 보다 많은 IoT관련 정보를 접하실 수 있습니다."
+        android:textColor="#BFBFBF"
+        android:textSize="9sp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/donation1"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp"
-        />
-        -->
+        android:gravity="center"
+        android:autoLink="web" />
+    />
 
     <!-- 먄책조항(Disclaimer) -->
 
@@ -326,11 +346,11 @@
         android:id="@+id/Disclaimer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="※주의 : 이 어플은 무상으로 제공되므로 정확성이나 안정성 등\n어떠한 보증도 제공하지 않으며,\n사용 간의 모든 책임은 사용자에게 있습니다."
+        android:text="※주의 : 이 어플은 무상으로 제공되므로 정확성이나 안정성 등 어떠한 보증도 제공하지 않으며,\n사용 간의 모든 책임은 사용자에게 있습니다."
         android:textColor="#BFBFBF"
         android:textSize="9sp"
         android:layout_marginTop="100dp"
-        android:layout_below="@id/eyesofkids"
+        android:layout_below="@id/donation1"
         android:layout_alignParentStart="true"
         android:gravity="center"
         />

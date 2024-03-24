@@ -95,7 +95,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="18"
+        android:text="00"
         android:textSize="135sp"
         android:textColor="#FFC000"
         android:layout_marginTop="105dp"
@@ -183,6 +183,8 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/operation_normal"
         android:layout_below="@id/statusTextView1"
+        android:visibility="gone"
+
         />
 
 

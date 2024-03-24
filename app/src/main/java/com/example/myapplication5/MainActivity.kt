@@ -38,6 +38,14 @@ import android.view.animation.LinearInterpolator
 import android.view.animation.Transformation
 import android.widget.SeekBar
 
+import android.content.SharedPreferences
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
 
 class MainActivity : AppCompatActivity() {
     private var wayTextView: TextView? = null
@@ -56,6 +64,19 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var statusImageView: ImageView
     private lateinit var statusImageView1: ImageView
+
+    // 셋팅값 적용하기
+    private lateinit var sharedPreferences: SharedPreferences
+
+    private var localServerAddress: String = "http://10.2.1.11"
+    private var yourFloorNumber: Int = 24
+    private var updateInterval: Int = 1000
+    private var elevatorNumber: Int = 1
+    private var isAlarmEnabled: Boolean = true
+
+
+
+
 
     // DoorState 열거형 정의
     enum class DoorState {
@@ -80,6 +101,8 @@ class MainActivity : AppCompatActivity() {
     private fun animateNormalState() {
         rotateAndChangeBrightness(statusImageView1)
         rotateAndChangeBrightness(statusImageView)
+        statusImageView1.visibility = View.VISIBLE
+
     }
 
     // 정상운행 상태가 아닐 때의 애니메이션 처리 함수
@@ -112,6 +135,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // SharedPreferences 초기화
+        sharedPreferences = getSharedPreferences("MySettings", Context.MODE_PRIVATE)
+
+// SharedPreferences에서 변수값 가져오기
+        localServerAddress = sharedPreferences.getString("localServerAddress", "http://10.2.1.12") ?: "http://10.2.1.12"
+        yourFloorNumber = sharedPreferences.getInt("yourFloorNumber", 24)
+        updateInterval = sharedPreferences.getInt("updateInterval", 1000)
+        elevatorNumber = sharedPreferences.getInt("elevatorNumber", 1)
+        isAlarmEnabled = sharedPreferences.getBoolean("isAlarmEnabled", true)
+
+
+
 
         // Initialize TextViews
         wayTextView = findViewById(R.id.wayTextView)
@@ -371,15 +407,16 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun fetchData() {
+        private fun fetchData() {
         GlobalScope.launch(Dispatchers.IO) {
+
             while (isActive) {
                 try {
                     // 화면의 상태를 체크하여 데이터를 가져옵니다.
                     if (!isScreenOff()) {
                         Log.d(TAG, "Fetching data from URL...")
                         val responseData =
-                            sendRequest("http://10.2.1.11/seoulapp/ezon_v2/common/elevator.do?method=ezon_v2.common.elevator.StateXML&hogi1=8")
+                            sendRequest("http://$localServerAddress/seoulapp/ezon_v2/common/elevator.do?method=ezon_v2.common.elevator.StateXML&hogi1=$elevatorNumber")    //localServer IP, elevatorNumber 변수추가
                         withContext(Dispatchers.Main) {
                             Log.d(TAG, "Data fetched successfully.")
 
@@ -388,11 +425,13 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         // 화면이 꺼져있을 때는 데이터를 가져오지 않습니다.
                         Log.d(TAG, "Screen is off. Skipping data fetch.")
-                        delay(1000) // 1초 대기 후 다시 확인
+
+                        delay(updateInterval.toLong()) // 1초 대기 후 다시 확인                //updateInterval 변수 추가
+
                         continue // 다음 반복으로 넘어감
                     }
                     // Wait for 1 second before fetching data again
-                    delay(1000)
+                    delay(updateInterval.toLong())                                          //updateInterval 변수 추가
                 } catch (e: IOException) {
                     Log.e(TAG, "Error fetching data", e)
                 }
@@ -405,7 +444,7 @@ class MainActivity : AppCompatActivity() {
         GlobalScope.launch(Dispatchers.IO) {
             try {
                 val response =
-                    sendRequest("http://10.2.1.11/seoulapp/ezon_v2/common/elevator.do?method=ezon_v2.common.elevator.CallXML&flag=down&hogi=8")
+                    sendRequest("http://$localServerAddress/seoulapp/ezon_v2/common/elevator.do?method=ezon_v2.common.elevator.CallXML&flag=down&hogi=$elevatorNumber")   //localServer IP, elevatorNumber 변수추가
                 withContext(Dispatchers.Main) {
                     handleResponse(response)
                 }
@@ -491,11 +530,16 @@ class MainActivity : AppCompatActivity() {
             // 도착 검사 및 알림
             if (isFloorDetectionEnabled) {
                 val floorInt = floor.toInt()
-                if (previousFloor > 18) {
-                    if (floorInt == 18) {
-                        Log.d(TAG, "Elevator has arrived: previousFloor > 18")
+
+                if (previousFloor > yourFloorNumber ) {  //도착층 변수 추가 : yourFloorNumber
+                    if (floorInt == yourFloorNumber) {   //도착층 변수 추가 : yourFloorNumber
+                        Log.d(TAG, "Elevator has arrived: previousFloor > yourFloorNumber")   //도착층 변수 추가 : yourFloorNumber
                         showToast("엘리베이터가 도착하였습니다.", 3000)
-                        playSound()
+
+                        if (isAlarmEnabled) {            // isAlarmEnabled 변수 확인 후 사운드 재생여부 결정
+                            playSound()
+                        }
+
                         isFloorDetectionEnabled = false // 다시 floor 감지 비활성화
 
                         // 시크바를 초기 상태로 되돌립니다.
@@ -507,10 +551,14 @@ class MainActivity : AppCompatActivity() {
                         seekBar.setOnTouchListener(null)
 
                     }
-                } else if (floorInt == 18 && way == "down") {
-                    Log.d(TAG, "Elevator has arrived: previousFloor < 18 && way == 'down'")
+                } else if (floorInt == yourFloorNumber && way == "down") {        //도착층 변수 추가 : yourFloorNumber
+                    Log.d(TAG, "Elevator has arrived: previousFloor < yourFloorNumber && way == 'down'")   //도착층 변수 추가 : yourFloorNumber
                     showToast("엘리베이터가 도착하였습니다.", 3000)
-                    playSound()
+
+                    if (isAlarmEnabled) {            // isAlarmEnabled 변수 확인 후 사운드 재생여부 결정
+                        playSound()
+                    }
+
                     isFloorDetectionEnabled = false // 다시 floor 감지 비활성화
 
                     // 시크바를 초기 상태로 되돌립니다.
