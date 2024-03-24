@@ -72,6 +72,15 @@ class SettingActivity : AppCompatActivity() {
         updateSettingValues()
     }
 
+    //  후원링크
+    fun onDonationClicked(view: View) {
+        val url = "https://qr.kakaopay.com/281006011184199780005254" // 웹페이지 URL을 여기에 입력하세요.
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(intent)
+    }
+
+
+
     private fun updateSettingValues() {
         val sharedPreferences = getSharedPreferences("MySettings", Context.MODE_PRIVATE)
         localServerEdit.setText(

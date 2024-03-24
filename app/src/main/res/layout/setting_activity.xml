@@ -241,7 +241,6 @@
 
 
 
-
     <TextView
         android:id="@+id/arrilvalalertsDes"
         android:layout_width="match_parent"
@@ -273,6 +272,7 @@
         />
 
     <!-- 제작자 후원하기 -->
+
     <ImageView
         android:id="@+id/donation1"
         android:layout_width="20dp"
@@ -282,6 +282,8 @@
         android:layout_marginTop="24dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="146dp"
+        android:clickable="true"
+        android:onClick="onDonationClicked"
         />
 
 
@@ -297,7 +299,9 @@
         android:layout_marginTop="21dp"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="140dp"
-        />
+        android:clickable="true"
+        android:onClick="onDonationClicked"/>
+
 
 
 
@@ -338,7 +342,7 @@
         android:layout_alignParentStart="true"
         android:gravity="center"
         android:autoLink="web" />
-    />
+
 
     <!-- 먄책조항(Disclaimer) -->
 
