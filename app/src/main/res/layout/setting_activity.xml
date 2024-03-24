@@ -4,7 +4,23 @@
     android:layout_height="match_parent"
     android:background="#262626"
     >
-<!-- 제목설정 -->
+
+    <!-- 버전정보 -->
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="8sp"
+        android:fontFamily="@font/menulis"
+        android:text="Ver 4.0"
+        android:textColor="#F2F2F2"
+        android:layout_toLeftOf="@id/test"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="21dp"
+        />
+
+    <!-- 제목설정 -->
 
     <ImageView
         android:id="@+id/setting_iconImageView"
