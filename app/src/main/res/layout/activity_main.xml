@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#262626"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/setting_iconImageView"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="right"
+            android:src="@drawable/setting_icon"
+            />
+    </FrameLayout>
+
+
+
+    <ImageView
+        android:id="@+id/upImageView"
+        android:gravity="center"
+        android:layout_above="@id/floorTextView"
+        android:layout_marginBottom="-135dp"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:adjustViewBounds="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/up"
+        />
+
+
+    <ImageView
+        android:id="@+id/downImageView"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:adjustViewBounds="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-20dp"
+        android:layout_below="@id/floorTextView"
+        android:src="@drawable/down" />
+
+
+        <TextView
+        android:id="@+id/wayTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="way: "
+        android:textColor="#FFC000"
+        android:layout_marginTop="0dp"
+        android:visibility="gone"
+        />
+
+
+    <TextView
+        android:id="@+id/wallpadFloorTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wayTextView"
+        android:gravity="center"
+        android:text="Wallpad Floor: "
+        android:textColor="#FFC000"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/stateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/callButton"
+        android:gravity="center"
+        android:text="운행상태: "
+        android:textColor="#92D050"
+        android:textSize="12sp"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"/>
+
+
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/wallpadFloorTextView"
+        android:text="Status: "
+        android:textColor="#FFC000"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/floorTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="18"
+        android:textSize="135sp"
+        android:textColor="#FFC000"
+        android:layout_marginTop="105dp"
+        android:fontFamily="@font/impact"
+
+        />
+
+    <TextView
+        android:id="@+id/dongTextView"
+        android:layout_below="@id/floorTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Dong: "
+        android:textColor="#FFC000"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/hoTextView"
+        android:layout_below="@id/dongTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Ho: "
+        android:textColor="#FFC000"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/doorStateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="DOOR"
+        android:textColor="#F2F2F2"
+        android:textSize="20sp"
+        android:layout_marginTop="480dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/doorStateTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="DOOR"
+        android:textColor="#F2F2F2"
+        android:textSize="14sp"
+        android:fontFamily="@font/menulis"
+        android:layout_below="@id/floorTextView"
+        android:layout_marginTop="120dp"
+        />
+
+    <TextView
+        android:id="@+id/statusTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/doorImageView2"
+        android:textSize="14sp"
+        android:fontFamily="@font/menulis"
+        android:layout_marginTop="30dp"
+        android:text="STATUS"
+        android:textColor="#F2F2F2"
+        />
+
+    <ImageView
+        android:id="@+id/StatusImageView"
+        android:gravity="center"
+        android:layout_marginTop="-3dp"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/operation"
+        android:layout_below="@id/statusTextView1"
+        />
+
+    <ImageView
+        android:id="@+id/StatusImageView1"
+        android:gravity="center"
+        android:layout_marginTop="-3dp"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/operation_normal"
+        android:layout_below="@id/statusTextView1"
+        />
+
+
+      <Button
+          android:id="@+id/callButton"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="CALL"
+          android:layout_below="@id/statusTextView1"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="80dp"
+          android:visibility="gone"
+          />
+
+      <!-- 첫 번째 도어 이미지 (왼쪽) -->
+    <ImageView
+        android:id="@+id/doorImageView1"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/doorStateTextView1"
+        android:layout_marginTop="3dp"
+        android:layout_toStartOf="@id/lineImageView"
+        android:layout_marginEnd="0dp"
+        android:src="@drawable/door" />
+
+    <!-- 라인 이미지 -->
+    <ImageView
+        android:id="@+id/lineImageView"
+        android:layout_width="4dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/doorStateTextView1"
+        android:layout_marginTop="3dp"
+        android:layout_centerHorizontal="true"
+    android:src="@drawable/line" />
+
+    <!-- 두 번째 도어 이미지 (오른쪽) -->
+    <ImageView
+        android:id="@+id/doorImageView2"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/doorStateTextView1"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@id/lineImageView"
+        android:layout_marginStart="0dp"
+        android:src="@drawable/door" />
+
+
+
+
+    <ImageView
+        android:id="@+id/progressbar"
+        android:gravity="center"
+        android:layout_marginTop="103dp"
+        android:layout_width="240dp"
+        android:layout_height="54dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/custom_seekbar_progress"
+        android:layout_below="@id/statusTextView1"
+        />
+
+    <ImageView
+        android:id="@+id/progressbar_call"
+        android:gravity="center"
+        android:layout_marginTop="103dp"
+        android:layout_width="240dp"
+        android:layout_height="54dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/custom_seekbar_progress_call"
+        android:layout_below="@id/statusTextView1"
+        android:alpha="0.2"
+        android:visibility="gone"
+
+        />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/statusTextView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:progressDrawable="@drawable/transparent_background"
+        android:thumb="@drawable/custom_seekbar_thumb"
+        android:thumbOffset="0dp"/>
+
+    <TextView
+        android:id="@+id/slidetext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingRight="-28dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/menulis"
+        android:layout_below="@id/statusTextView1"
+        android:layout_marginTop="120dp"
+        android:text="Slide to Call"
+        android:textColor="#F2F2F2"
+        />
+
+    <TextView
+        android:id="@+id/coming"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingRight="0dp"
+        android:layout_below="@id/statusTextView1"
+        android:textSize="16sp"
+        android:fontFamily="@font/menulis"
+        android:layout_marginTop="120dp"
+        android:text="Coming..."
+        android:textColor="#F2F2F2"
+        android:visibility="gone"
+
+        />
+
+</RelativeLayout>

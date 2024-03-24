@@ -1,0 +1,15 @@
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Translate animation for left door -->
+    <translate
+        android:interpolator="@android:anim/linear_interpolator"
+        android:fromXDelta="0"
+        android:toXDelta="-100dp"
+        android:duration="500" />
+
+    <!-- Translate animation for right door -->
+    <translate
+        android:interpolator="@android:anim/linear_interpolator"
+        android:fromXDelta="0"
+        android:toXDelta="100dp"
+        android:duration="500" />
+</set>

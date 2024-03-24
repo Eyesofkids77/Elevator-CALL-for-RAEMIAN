@@ -1,0 +1,25 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Left Door -->
+    <item android:gravity="start">
+        <shape android:shape="rectangle">
+            <solid android:color="#CCCCCC" />
+            <corners android:radius="8dp" />
+            <size android:width="100dp" android:height="100dp" />
+        </shape>
+    </item>
+    <!-- Right Door -->
+    <item android:gravity="end">
+        <shape android:shape="rectangle">
+            <solid android:color="#CCCCCC" />
+            <corners android:radius="8dp" />
+            <size android:width="100dp" android:height="100dp" />
+        </shape>
+    </item>
+    <!-- Vertical Line -->
+    <item android:gravity="center">
+        <shape android:shape="rectangle">
+            <solid android:color="#000000" />
+            <size android:width="4dp" android:height="100dp" />
+        </shape>
+    </item>
+</layer-list>

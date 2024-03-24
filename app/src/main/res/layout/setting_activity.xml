@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#262626"
+    >
+<!-- 제목설정 -->
+
+    <ImageView
+        android:id="@+id/setting_iconImageView2"
+        android:layout_width="60dp"
+        android:layout_height="55dp"
+        android:src="@drawable/setting_icon"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+    />
+
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SETTING"
+        android:textColor="#F2F2F2"
+        android:textSize="32sp"
+        android:layout_alignTop="@id/setting_iconImageView2"
+        android:layout_toEndOf="@id/setting_iconImageView2"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="-7dp" />
+        />
+
+
+<!-- 서버 IP설정 -->
+
+    <TextView
+        android:id="@+id/localserver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOCAL SERVER"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        android:layout_below="@id/test"
+        android:gravity="end"
+        android:paddingEnd="220dp"
+        android:layout_alignParentStart="true" />
+
+
+    <EditText
+        android:id="@+id/localserverEdit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:layout_marginTop="24dp"
+        android:layout_below="@id/test"
+        android:inputType="text"
+        android:background="#F2F2F2"
+        android:text="10.2.1.11"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        />
+
+    <TextView
+        android:id="@+id/localserverDes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOCAL SERVER에 대한 설명 추가 설명 추가 설명 추가설명 추가\n설명 추가 설명 추가 설명 추가 설명 추가  "
+        android:textColor="#BFBFBF"
+        android:textSize="9sp"
+        android:layout_marginTop="1dp"
+        android:layout_below="@id/localserver"
+        android:layout_alignParentStart="true"
+        android:gravity="start"
+        android:paddingStart="75dp" />
+
+
+<!-- 도착층 설정 -->
+
+    <TextView
+        android:id="@+id/yourfloor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="YOUR FLOOR"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
+        android:layout_below="@id/localserverDes"
+        android:gravity="end"
+        android:layout_marginTop="15dp"
+        android:paddingEnd="220dp"
+        />
+
+    <EditText
+        android:id="@+id/yourfloorEdit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/localserverDes"
+        android:inputType="text"
+        android:background="#F2F2F2"
+        android:text="24"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        />
+
+
+    <!-- 현 상태 업데이트 주기 설정 -->
+
+    <TextView
+        android:id="@+id/yourfloorDes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOCAL SERVER에 대한 설명 추가 설명 추가 설명 추가설명 추가\n설명 추가 설명 추가 설명 추가 설명 추가  "
+        android:textColor="#BFBFBF"
+        android:textSize="9sp"
+        android:layout_marginTop="1dp"
+        android:layout_below="@id/yourfloor"
+        android:layout_alignParentStart="true"
+        android:gravity="start"
+        android:paddingStart="75dp" />
+
+    <TextView
+        android:id="@+id/updateinterval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingEnd="220dp"
+        android:text="UPDATE INTERVAL"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/yourfloorDes"
+        />
+
+    <EditText
+        android:id="@+id/updateintervalEdit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/yourfloorDes"
+        android:inputType="text"
+        android:background="#F2F2F2"
+        android:text="1000"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        />
+
+
+    <TextView
+        android:id="@+id/updateintervalDes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOCAL SERVER에 대한 설명 추가 설명 추가 설명 추가설명 추가\n설명 추가 설명 추가 설명 추가 설명 추가  "
+        android:textColor="#BFBFBF"
+        android:textSize="9sp"
+        android:layout_marginTop="1dp"
+        android:layout_below="@id/updateinterval"
+        android:layout_alignParentStart="true"
+        android:gravity="start"
+        android:paddingStart="75dp" />
+
+
+
+    <!-- 엘리베이터 번호 설정 -->
+
+    <TextView
+        android:id="@+id/elevatornumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingEnd="220dp"
+        android:text="ELEVATOR No."
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/updateintervalDes"
+        />
+
+    <EditText
+        android:id="@+id/elevatornumberEdit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/updateintervalDes"
+        android:inputType="text"
+        android:background="#F2F2F2"
+        android:text="1"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        />
+
+    <TextView
+        android:id="@+id/elevatornumberDes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOCAL SERVER에 대한 설명 추가 설명 추가 설명 추가설명 추가\n설명 추가 설명 추가 설명 추가 설명 추가  "
+        android:textColor="#BFBFBF"
+        android:textSize="9sp"
+        android:layout_marginTop="1dp"
+        android:layout_below="@id/elevatornumber"
+        android:layout_alignParentStart="true"
+        android:gravity="start"
+        android:paddingStart="75dp" />
+
+
+    <!-- 도착 시 알림 여부 설정-->
+
+    <TextView
+        android:id="@+id/arrilvalalerts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingEnd="220dp"
+        android:text="ARRIVAL ALERTS"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/elevatornumberDes"
+        />
+
+    <Switch
+        android:id="@+id/switchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:checked="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/elevatornumberDes"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="152dp"
+        android:track="@drawable/setting_switch_track"
+        android:thumb="@drawable/setting_switch_thumb"/>
+
+
+
+
+    <TextView
+        android:id="@+id/arrilvalalertsDes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOCAL SERVER에 대한 설명 추가 설명 추가 설명 추가설명 추가\n설명 추가 설명 추가 설명 추가 설명 추가  "
+        android:textColor="#BFBFBF"
+        android:textSize="9sp"
+        android:layout_marginTop="1dp"
+        android:layout_below="@id/arrilvalalerts"
+        android:layout_alignParentStart="true"
+        android:gravity="start"
+        android:paddingStart="75dp" />
+
+    <!-- Log 비활성화 -->
+
+    <TextView
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingEnd="220dp"
+        android:text="LOG"
+        android:textColor="#F2F2F2"
+        android:textSize="18sp"
+        android:layout_below="@id/arrilvalalerts"
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+
+        />
+
+    <!-- 제작자 후원하기 -->
+
+    <TextView
+        android:id="@+id/eyesofkids"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="제작자 후원하기"
+        android:textColor="#FFC000"
+        android:textSize="15sp"
+        android:layout_below="@id/backButton"
+        android:layout_marginTop="20dp"
+
+        />
+
+
+    <!-- 세이브, 돌아가기 버튼 -->
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/arrilvalalertsDes"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:layout_marginEnd="110dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/arrilvalalertsDes"
+        android:layout_alignParentEnd="true" />
+
+
+    <!-- 카페 접속 링크 -->
+
+    <!--<ImageView
+        android:id="@+id/setting_iconImageView2"
+        android:layout_width="60dp"
+        android:layout_height="55dp"
+        android:src="@drawable/setting_icon"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        />
+        -->
+
+    <!-- 먄책조항(Disclaimer) -->
+
+    <TextView
+        android:id="@+id/Disclaimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="※주의 : 이 어플은 무상으로 제공되므로 정확성이나 안정성 등\n어떠한 보증도 제공하지 않으며,\n사용 간의 모든 책임은 사용자에게 있습니다."
+        android:textColor="#BFBFBF"
+        android:textSize="9sp"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/eyesofkids"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        />
+
+
+
+</RelativeLayout>
