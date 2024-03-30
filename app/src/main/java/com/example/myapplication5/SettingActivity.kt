@@ -3,6 +3,7 @@ package com.example.myapplication5
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.text.SpannableStringBuilder
@@ -15,7 +16,10 @@ import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 
 class SettingActivity : AppCompatActivity() {
 
@@ -73,11 +77,34 @@ class SettingActivity : AppCompatActivity() {
     }
 
     //  후원링크
-    fun onDonationClicked(view: View) {
-        val url = "https://qr.kakaopay.com/281006011184199780005254" // 웹페이지 URL을 여기에 입력하세요.
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+     fun onDonationClicked(view: View) {
+        val dialogBuilder = AlertDialog.Builder(this)
+
+        val imageView = ImageView(this)
+        val drawable: Drawable? = resources.getDrawable(R.drawable.qrcode) // qrcode.jpg 파일의 이름에 따라 수정해야 합니다.
+        imageView.setImageDrawable(drawable)
+
+        dialogBuilder.setView(imageView)
+
+        dialogBuilder.setCancelable(true)
+            .setPositiveButton("닫기") { dialog, _ -> dialog.dismiss() }
+            .setNegativeButton("링크바로열기") { _, _ ->
+                openLink("https://qr.kakaopay.com/281006011184199780005254")
+            }
+
+        val alert = dialogBuilder.create()
+        alert.setTitle("QR 코드")
+        alert.show()
+    }
+
+    private fun openLink(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
         startActivity(intent)
     }
+
+
+
 
 
 
