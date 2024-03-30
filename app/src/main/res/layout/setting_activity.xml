@@ -57,7 +57,7 @@
         android:textSize="20sp"
         android:layout_below="@id/test"
         android:gravity="left"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         android:layout_alignParentStart="true"
         android:layout_marginTop="40dp"
         />
@@ -90,7 +90,7 @@
         android:layout_below="@id/localserver"
         android:layout_alignParentStart="true"
         android:gravity="start"
-        android:paddingStart="40dp" />
+        android:paddingStart="20dp" />
 
 
 <!-- 도착층 설정 -->
@@ -105,7 +105,7 @@
         android:gravity="left"
         android:layout_marginTop="20dp"
         android:textSize="20sp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         />
 
     <EditText
@@ -138,7 +138,7 @@
         android:layout_below="@id/yourfloor"
         android:layout_alignParentStart="true"
         android:gravity="start"
-        android:paddingStart="40dp" />
+        android:paddingStart="20dp" />
 
     <!-- 현 상태 업데이트 주기 설정 -->
 
@@ -151,7 +151,7 @@
         android:textColor="#F2F2F2"
         android:textSize="20sp"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         android:layout_below="@id/yourfloorDes"
         />
 
@@ -182,7 +182,7 @@
         android:layout_below="@id/updateinterval"
         android:layout_alignParentStart="true"
         android:gravity="start"
-        android:paddingStart="40dp" />
+        android:paddingStart="20dp" />
 
 
 
@@ -197,7 +197,7 @@
         android:textColor="#F2F2F2"
         android:textSize="20sp"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         android:layout_below="@id/updateintervalDes"
         />
 
@@ -227,7 +227,7 @@
         android:layout_below="@id/elevatornumber"
         android:layout_alignParentStart="true"
         android:gravity="start"
-        android:paddingStart="40dp"
+        android:paddingStart="20dp"
         android:autoLink="web" />
 
 
@@ -243,7 +243,7 @@
         android:textColor="#F2F2F2"
         android:textSize="20sp"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         android:layout_below="@id/elevatornumberDes"
         />
 
@@ -273,7 +273,7 @@
         android:layout_below="@id/arrilvalalerts"
         android:layout_alignParentStart="true"
         android:gravity="start"
-        android:paddingStart="40dp" />
+        android:paddingStart="20dp" />
 
     <!-- Log 비활성화 -->
 
